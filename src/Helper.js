@@ -18,6 +18,7 @@ export default class Helper {
   parse() {
     this._parsed = parseString(this._contents)
     logger.info('parsed:', this.parsed)
+    console.log(this._parsed);
     return this._parsed
   }
 
