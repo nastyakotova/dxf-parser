@@ -64,13 +64,14 @@ export default (tuples) => {
     const entityType = tuples[0][1]
     const contentTuples = tuples.slice(1)
 
-    tuples.forEach((tuple) => {
-      if (tuple.find((el) => el === 'PE_URL'))
-        console.log('TTTTTTTTTTT', tuples, entityType, contentTuples);
-    })
-
     if (handlers[entityType] !== undefined) {
       const e = handlers[entityType].process(contentTuples)
+
+      tuples.forEach((tuple) => {
+        if (tuple.find((el) => el === 'PE_URL'))
+          console.log('TTTTTTTTTTT', tuples, entityType, contentTuples, 'EEE', e);
+      })
+
       // "POLYLINE" cannot be parsed in isolation, it is followed by
       // N "VERTEX" entities and ended with a "SEQEND" entity.
       // Essentially we convert POLYLINE to LWPOLYLINE - the extra
