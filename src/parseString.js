@@ -81,6 +81,7 @@ const reduceSection = (acc, section) => {
 export default (string) => {
   const lines = string.split(/\r\n|\r|\n/g)
   console.log('1 lines', lines);
+  console.log('123 lines', lines.filter((line) => line === 'PE_URL'));
   const tuples = convertToTypesAndValues(lines)
   console.log('2 tuples', tuples);
   const sections = separateSections(tuples)
