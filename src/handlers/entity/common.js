@@ -70,7 +70,7 @@ export default (type, value) => {
       }
     case 1000:
       return {
-        url: value,
+        peUrl: value,
       }
     default:
       return {}

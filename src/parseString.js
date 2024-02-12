@@ -73,26 +73,14 @@ const reduceSection = (acc, section) => {
       break
     default:
       logger.warn(`Unsupported section: ${sectionType}`)
-    // console.log(`Unsupported section: ${sectionType}`)
   }
   return acc
 }
 
 export default (string) => {
   const lines = string.split(/\r\n|\r|\n/g)
-  // console.log('1 lines', lines);
-  // console.log('123 lines', lines.filter((line) => line === 'PE_URL'));
   const tuples = convertToTypesAndValues(lines)
-  // console.log('2 tuples', tuples);
-  // console.log('2345 tuples', tuples);
-  // tuples.forEach((tuple, idx) => {
-  //   if (tuple.find((el) => el === 'PE_URL')) {
-  //     console.log('000000', idx, tuple);
-  //   }
-  // })
-
   const sections = separateSections(tuples)
-  console.log('3 sections', sections);
   const result = sections.reduce(reduceSection, {
     // Start with empty defaults in the event of empty sections
     header: {},

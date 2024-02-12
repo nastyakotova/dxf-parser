@@ -18,8 +18,6 @@ export default class Helper {
   parse() {
     this._parsed = parseString(this._contents)
     logger.info('parsed:', this.parsed)
-    console.log('111', this._parsed);
-    console.log('----!!', this._parsed.entities.filter((entity) => entity.handle === '20947'));
     return this._parsed
   }
 

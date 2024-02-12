@@ -61,6 +61,7 @@ describe('DIMENSION', () => {
       measureEnd: { x: 109.5740206784428, y: 94.60764194710634, z: 0 },
       rotation: 90,
       layer: '0',
+      peUrl: 'DSTYLE',
     })
 
     expect(header.dimArrowSize).toEqual(3)

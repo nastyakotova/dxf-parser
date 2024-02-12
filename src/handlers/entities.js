@@ -18,7 +18,6 @@ import threeDFace from './entity/threeDFace'
 import dimension from './entity/dimension'
 import text from './entity/text'
 import viewport from './entity/viewport'
-import peurl from './entity/peurl'
 
 const handlers = [
   point,
@@ -40,7 +39,6 @@ const handlers = [
   dimension,
   threeDFace,
   viewport,
-  peurl,
 ].reduce((acc, mod) => {
   acc[mod.TYPE] = mod
   return acc
@@ -69,11 +67,6 @@ export default (tuples) => {
     if (handlers[entityType] !== undefined) {
       const e = handlers[entityType].process(contentTuples)
 
-      tuples.forEach((tuple) => {
-        if (tuple.find((el) => el === 'PE_URL'))
-          console.log('TTTTTTTTTTT', tuples, entityType, contentTuples, 'EEE', e, handlers);
-      })
-
       // "POLYLINE" cannot be parsed in isolation, it is followed by
       // N "VERTEX" entities and ended with a "SEQEND" entity.
       // Essentially we convert POLYLINE to LWPOLYLINE - the extra
@@ -95,7 +88,6 @@ export default (tuples) => {
       }
     } else {
       logger.warn('unsupported type in ENTITIES section:', entityType)
-      console.log('unsupported type in ENTITIES section:', entityType)
     }
   })
 
