@@ -40,8 +40,8 @@ export default (type, value) => {
       return value === 0
         ? {}
         : {
-            paperSpace: value,
-          }
+          paperSpace: value,
+        }
     case 68:
       // Identifies whether viewport is on but fully off screen, is not active, or is off
       return {
@@ -67,6 +67,10 @@ export default (type, value) => {
     case 410:
       return {
         layout: value,
+      }
+    case 1000:
+      return {
+        url: value,
       }
     default:
       return {}
