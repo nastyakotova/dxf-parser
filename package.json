@@ -2,7 +2,7 @@
   "name": "dxf",
   "version": "5.1.0",
   "description": "DXF parser for node/browser",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "bin": {
     "dxf-to-svg": "lib/cli.js"
   },
