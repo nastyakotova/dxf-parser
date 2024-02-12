@@ -69,7 +69,7 @@ export default (tuples) => {
 
       tuples.forEach((tuple) => {
         if (tuple.find((el) => el === 'PE_URL'))
-          console.log('TTTTTTTTTTT', tuples, entityType, contentTuples, 'EEE', e);
+          console.log('TTTTTTTTTTT', tuples, entityType, contentTuples, 'EEE', e, handlers);
       })
 
       // "POLYLINE" cannot be parsed in isolation, it is followed by
