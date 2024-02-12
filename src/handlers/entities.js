@@ -87,6 +87,7 @@ export default (tuples) => {
       }
     } else {
       logger.warn('unsupported type in ENTITIES section:', entityType)
+      console.log('unsupported type in ENTITIES section:', entityType)
     }
   })
 

@@ -73,6 +73,7 @@ const reduceSection = (acc, section) => {
       break
     default:
       logger.warn(`Unsupported section: ${sectionType}`)
+      console.log(`Unsupported section: ${sectionType}`)
   }
   return acc
 }
