@@ -63,6 +63,7 @@ export default (tuples) => {
   entityGroups.forEach((tuples) => {
     const entityType = tuples[0][1]
     const contentTuples = tuples.slice(1)
+    console.log('TTTTTTTTTTT', tuples, entityType, contentTuples);
 
     if (handlers[entityType] !== undefined) {
       const e = handlers[entityType].process(contentTuples)
