@@ -84,6 +84,13 @@ export default (string) => {
   console.log('123 lines', lines.filter((line) => line === 'PE_URL'));
   const tuples = convertToTypesAndValues(lines)
   console.log('2 tuples', tuples);
+  // console.log('2345 tuples', tuples);
+  tuples.forEach((tuple, idx) => {
+    if (tuple.find((el) => el === 'PE_URL')) {
+      console.log('000000', idx, tuple);
+    }
+  })
+
   const sections = separateSections(tuples)
   console.log('3 sections', sections);
   const result = sections.reduce(reduceSection, {
