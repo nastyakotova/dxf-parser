@@ -79,8 +79,11 @@ const reduceSection = (acc, section) => {
 
 export default (string) => {
   const lines = string.split(/\r\n|\r|\n/g)
+  console.log('1 lines', lines);
   const tuples = convertToTypesAndValues(lines)
+  console.log('2 tuples', tuples);
   const sections = separateSections(tuples)
+  console.log('3 sections', sections);
   const result = sections.reduce(reduceSection, {
     // Start with empty defaults in the event of empty sections
     header: {},
