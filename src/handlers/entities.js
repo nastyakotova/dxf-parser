@@ -18,6 +18,7 @@ import threeDFace from './entity/threeDFace'
 import dimension from './entity/dimension'
 import text from './entity/text'
 import viewport from './entity/viewport'
+import peurl from './entity/peurl'
 
 const handlers = [
   point,
@@ -39,6 +40,7 @@ const handlers = [
   dimension,
   threeDFace,
   viewport,
+  peurl,
 ].reduce((acc, mod) => {
   acc[mod.TYPE] = mod
   return acc
